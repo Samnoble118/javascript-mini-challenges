@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+</head>
+<body>
+
+    <!-- The day and time challenge -->
+    <div class="dayTime">
+        <h2>The Day & Time</h2>
+        <div id="myDiv"></div>
+        <br>
+    </div>
+
+    <!-- the print screen challenge  -->
+    <div class="screenPrint">
+        <button id="printBtn">Print this page</button>
+        <br>
+    </div>
+
+    <!-- the date challenge  -->
+    <div class="theDate">
+        <h2>The Date</h2>
+        <div id="myDateDiv"></div>
+    </div>
+    
+</body>
+
+<script>
+
+    // The day and time challenge
+
+    var today = new Date();
+    var day = today.getDay();
+    var hour = today.getHours();
+    var min = today.getMinutes();
+    var secs = today.getSeconds();
+    var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"]
+    
+    document.getElementById("myDiv").innerHTML = "Today is " + dayList[day] + "<br />" + "The time is " + hour + ":" + min + ":" + secs;
+
+    // the print screen challenge 
+
+    document.getElementById("printBtn").addEventListener('click', function(){
+        window.print();
+    });
+
+    // the date challenge 
+
+    var day1 = today.getDate();
+    var month = today.getMonth() + 1;
+    var year = today.getFullYear();
+
+    document.getElementById("myDateDiv").innerHTML = day1 + '/' + month + '/' + year;
+
+    console.log(month);
+    
+
+</script>
+
+</html>
